@@ -1,6 +1,8 @@
-const TodoItem = () => {
+const TodoItem = props => {
+  const { completed, id, title } = props.todo
+
   return (
-    <div>Item</div>
+    <div>{title}</div>
   )
 }
 

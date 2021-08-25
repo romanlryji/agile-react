@@ -16,8 +16,18 @@ const InputTodo = props => {
     })
   }
 
-  const addClick = () => {
-    console.log(inputText.title)
+  const addClick = e => {
+    e.preventDefault()
+    if (inputText.title.trim()) {
+      props.addTodoFunc(inputText.title)
+      setInputText({
+        title: ""
+      })
+    } else {
+      alert("Enter something please")
+    }
+    
+    console.log(inputText.title + ' added')
   }
 
   return (

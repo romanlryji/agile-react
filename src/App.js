@@ -8,6 +8,8 @@ import Toast from 'react-bootstrap/Toast';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 
+import InputTodo from './components/InputTodo';
+
 import './App.css';
 
 const ExampleToast = ({ children }) => {
@@ -39,7 +41,9 @@ function App() {
           </span>
         </ExampleToast>
       </Jumbotron>
+      <InputTodo />
     </Container>
+    
 
     // <>
     //   <Navbar />

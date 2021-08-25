@@ -32,7 +32,7 @@ function App() {
   return (
 
     <Container className="p-3">
-      <Jumbotron>
+      {/* <Jumbotron>
         <h1 className="header">Welcome To React-Bootstrap</h1>
         <ExampleToast>
           We now have Toasts
@@ -40,7 +40,7 @@ function App() {
             🎉
           </span>
         </ExampleToast>
-      </Jumbotron>
+      </Jumbotron> */}
       <InputTodo />
     </Container>
     

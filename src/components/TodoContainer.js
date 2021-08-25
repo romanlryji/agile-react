@@ -1,13 +1,38 @@
+import React, { useState, useEffect } from "react"
+import { v4 as uuidv4 } from "uuid"
 import InputTodo from "./InputTodo"
 import TodoItems from "./TodoItems"
 
 const TodoContainer = () => {
-    return (
-        <div>
-            <InputTodo />
-            <TodoItems />
-        </div>
-    )
+  let todo1 = {
+    id: uuidv4(),
+    title: 'Item1'
+  }
+
+  let todo2 = {
+    id: uuidv4(),
+    title: 'Item2'
+  }
+
+  const [todos, setTodos] = useState([todo1, todo2])
+
+  // let todos = [todo1, todo2]
+
+  const addTodoItem = title => {
+    const newTodo = {
+      id: uuidv4(),
+      title: title,
+      // completed: false
+    }
+    setTodos([...todos, newTodo])
+  }
+
+  return (
+    <div>
+      <InputTodo addTodoFunc = {addTodoItem} />
+      <TodoItems todos={todos} />
+    </div>
+  )
 }
 
 export default TodoContainer

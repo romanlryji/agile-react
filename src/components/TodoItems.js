@@ -2,14 +2,26 @@ import ListGroup from 'react-bootstrap/ListGroup'
 
 import TodoItem from "./TodoItem"
 
-const TodoItems = () => {
+const TodoItems = props => {
+
+
+
   return (
+
     <ListGroup>
-      <ListGroup.Item><TodoItem /></ListGroup.Item>
-      <ListGroup.Item><TodoItem /></ListGroup.Item>
-      <ListGroup.Item><TodoItem /></ListGroup.Item>
-      <ListGroup.Item><TodoItem /></ListGroup.Item>
-      <ListGroup.Item><TodoItem /></ListGroup.Item>
+      {props.todos.map(
+        todo => (
+          <ListGroup.Item key={todo.id}><TodoItem
+            key={todo.id}
+            todo={todo}
+            handleChangeProps={props.handleChangeProps}
+            deleteTodoProps={props.deleteTodoProps}
+            setUpdate={props.setUpdate}
+          /></ListGroup.Item>
+        ))
+      }
+      {/* <ListGroup.Item><TodoItem todo={todo1} /></ListGroup.Item>
+      <ListGroup.Item><TodoItem todo={todo2} /></ListGroup.Item> */}
     </ListGroup>
   )
 }

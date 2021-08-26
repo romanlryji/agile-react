@@ -1,9 +1,21 @@
+import { useState } from "react"
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 
 const TodoItem = props => {
   const { completed, id, title } = props.todo
+  const [editing, setEditing] = useState(false)
+
+  const handleEditing = () => {
+    setEditing(true)
+  }
+
+  const handleUpdateDone = e => {
+    if (e.key === "Enter") {
+      setEditing(false)
+    }
+  }
 
   const completedStyle = {
     fontStyle: "italic",
@@ -16,9 +28,12 @@ const TodoItem = props => {
     <InputGroup>
       <InputGroup.Checkbox aria-label="Checkbox for following text input" checked={completed} onChange={() => props.handleCompletedToggleFunc(id)} />
       <FormControl
-        readOnly={true}
+        readOnly={!editing}
         style={completed ? completedStyle : null}
         value={title}
+        onDoubleClick={handleEditing}
+        onKeyDown={handleUpdateDone}
+        onChange={e => props.setNewTitleFunc(id, e.target.value)}
       />
       <Button
         variant="outline-secondary"

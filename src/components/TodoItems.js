@@ -16,7 +16,7 @@ const TodoItems = props => {
             todo={todo}
             handleCompletedToggleFunc={props.handleCompletedToggleFunc}
             deleteTodoFunc={props.deleteTodoFunc}
-            setUpdate={props.setUpdate}
+            setNewTitleFunc={props.setNewTitleFunc}
           /></ListGroup.Item>
         ))
       }

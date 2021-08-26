@@ -54,6 +54,17 @@ const TodoContainer = () => {
     ])
   }
 
+  const setNewTitle = (id, newTitle) => {
+    setTodos(
+      todos.map(todo => {
+        if (todo.id === id) {
+          todo.title = newTitle
+        }
+        return todo
+      })
+    )
+  }
+
   function getNow() {
     return Date.now()
   }
@@ -75,6 +86,7 @@ const TodoContainer = () => {
         todos={todos}
         deleteTodoFunc={delTodoItem}
         handleCompletedToggleFunc={handleCompletedToggle}
+        setNewTitleFunc={setNewTitle}
       />
       <InputTodo addTodoFunc={addTodoItem} />
     </div>

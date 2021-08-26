@@ -25,11 +25,12 @@ const TodoContainer = () => {
         if (todo.id === id) {
           return {
             ...todo,
-            completed: !todo.completed
+            completed: !todo.completed,
+            modified: getNow()
           }
         }
         return todo
-      })
+      })//.sort((a, b) => a.modified < b.modified)
     )
   }
 
@@ -37,9 +38,12 @@ const TodoContainer = () => {
     const newTodo = {
       id: uuidv4(),
       title: title,
-      completed: false
+      completed: false,
+      created: getNow(),
+      modified: getNow()
     }
     setTodos([...todos, newTodo])
+    // alert((new Date(getNow())).getTimezoneOffset())
   }
 
   const delTodoItem = id => {
@@ -48,6 +52,10 @@ const TodoContainer = () => {
         return todo.id !== id
       })
     ])
+  }
+
+  function getNow() {
+    return Date.now()
   }
 
   function getInitialTodos() {
@@ -63,12 +71,12 @@ const TodoContainer = () => {
 
   return (
     <div>
-      <InputTodo addTodoFunc={addTodoItem} />
       <TodoItems
         todos={todos}
         deleteTodoFunc={delTodoItem}
         handleCompletedToggleFunc={handleCompletedToggle}
       />
+      <InputTodo addTodoFunc={addTodoItem} />
     </div>
   )
 }

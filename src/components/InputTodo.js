@@ -16,6 +16,16 @@ const InputTodo = props => {
     })
   }
 
+  const handleKeydown = e => {
+    if (e.key === "Enter") {
+      addClick(e)
+    } else if (e.key === "Escape") {
+      setInputText({
+        title: ""
+      })
+    }
+  }
+
   const addClick = e => {
     e.preventDefault()
     if (inputText.title.trim()) {
@@ -35,6 +45,7 @@ const InputTodo = props => {
       <FormControl
         value={inputText.title}
         onChange={onChange}
+        onKeyDown={handleKeydown}
         placeholder="New Todo Item"
         aria-label="New Todo Item"
         aria-describedby="basic-addon2"

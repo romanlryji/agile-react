@@ -5,10 +5,19 @@ import Button from 'react-bootstrap/Button'
 const TodoItem = props => {
   const { completed, id, title } = props.todo
 
+  const completedStyle = {
+    fontStyle: "italic",
+    color: "#595959",
+    opacity: 0.4,
+    textDecoration: "line-through",
+  }
+
   return (
     <InputGroup>
       <InputGroup.Checkbox aria-label="Checkbox for following text input" checked={completed} onChange={() => props.handleCompletedToggleFunc(id)} />
-      <FormControl readOnly={true}
+      <FormControl
+        readOnly={true}
+        style={completed ? completedStyle : null}
         value={title}
       />
       <Button

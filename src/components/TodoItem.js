@@ -12,7 +12,7 @@ const TodoItem = props => {
   }
 
   const handleUpdateDone = e => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" || e.key === "Escape") {
       setEditingMode(false)
     }
   }
@@ -33,6 +33,7 @@ const TodoItem = props => {
         value={title}
         onDoubleClick={enableEditing}
         onKeyDown={handleUpdateDone}
+        onBlur={() => {setEditingMode(false)}}
         onChange={e => props.setNewTitleFunc(id, e.target.value)}
       />
       <Button

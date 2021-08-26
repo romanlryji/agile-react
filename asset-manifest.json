@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/agile-react/static/css/main.7f3f607c.chunk.css",
+    "main.js": "/agile-react/static/js/main.59dd9b3c.chunk.js",
+    "main.js.map": "/agile-react/static/js/main.59dd9b3c.chunk.js.map",
+    "runtime-main.js": "/agile-react/static/js/runtime-main.f8efa79f.js",
+    "runtime-main.js.map": "/agile-react/static/js/runtime-main.f8efa79f.js.map",
+    "static/css/2.818011ed.chunk.css": "/agile-react/static/css/2.818011ed.chunk.css",
+    "static/js/2.f6936dce.chunk.js": "/agile-react/static/js/2.f6936dce.chunk.js",
+    "static/js/2.f6936dce.chunk.js.map": "/agile-react/static/js/2.f6936dce.chunk.js.map",
+    "static/js/3.2ba4b2d1.chunk.js": "/agile-react/static/js/3.2ba4b2d1.chunk.js",
+    "static/js/3.2ba4b2d1.chunk.js.map": "/agile-react/static/js/3.2ba4b2d1.chunk.js.map",
+    "index.html": "/agile-react/index.html",
+    "static/css/2.818011ed.chunk.css.map": "/agile-react/static/css/2.818011ed.chunk.css.map",
+    "static/css/main.7f3f607c.chunk.css.map": "/agile-react/static/css/main.7f3f607c.chunk.css.map",
+    "static/js/2.f6936dce.chunk.js.LICENSE.txt": "/agile-react/static/js/2.f6936dce.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f8efa79f.js",
+    "static/css/2.818011ed.chunk.css",
+    "static/js/2.f6936dce.chunk.js",
+    "static/css/main.7f3f607c.chunk.css",
+    "static/js/main.59dd9b3c.chunk.js"
+  ]
+}

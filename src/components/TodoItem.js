@@ -5,15 +5,15 @@ import Button from 'react-bootstrap/Button'
 
 const TodoItem = props => {
   const { completed, id, title } = props.todo
-  const [editing, setEditing] = useState(false)
+  const [editingMode, setEditingMode] = useState(false)
 
-  const handleEditing = () => {
-    setEditing(true)
+  const enableEditing = () => {
+    setEditingMode(true)
   }
 
   const handleUpdateDone = e => {
     if (e.key === "Enter") {
-      setEditing(false)
+      setEditingMode(false)
     }
   }
 
@@ -28,10 +28,10 @@ const TodoItem = props => {
     <InputGroup>
       <InputGroup.Checkbox aria-label="Checkbox for following text input" checked={completed} onChange={() => props.handleCompletedToggleFunc(id)} />
       <FormControl
-        readOnly={!editing}
+        readOnly={!editingMode}
         style={completed ? completedStyle : null}
         value={title}
-        onDoubleClick={handleEditing}
+        onDoubleClick={enableEditing}
         onKeyDown={handleUpdateDone}
         onChange={e => props.setNewTitleFunc(id, e.target.value)}
       />

@@ -82,13 +82,13 @@ const TodoContainer = () => {
 
   return (
     <div>
+      <InputTodo addTodoFunc={addTodoItem} />
       <TodoItems
         todos={todos}
         deleteTodoFunc={delTodoItem}
         handleCompletedToggleFunc={handleCompletedToggle}
         setNewTitleFunc={setNewTitle}
       />
-      <InputTodo addTodoFunc={addTodoItem} />
     </div>
   )
 }

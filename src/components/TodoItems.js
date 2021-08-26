@@ -14,7 +14,7 @@ const TodoItems = props => {
           <ListGroup.Item key={todo.id}><TodoItem
             key={todo.id}
             todo={todo}
-            handleChangeProps={props.handleChangeProps}
+            handleCompletedToggleFunc={props.handleCompletedToggleFunc}
             deleteTodoFunc={props.deleteTodoFunc}
             setUpdate={props.setUpdate}
           /></ListGroup.Item>

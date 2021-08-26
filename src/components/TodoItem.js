@@ -7,7 +7,8 @@ const TodoItem = props => {
 
   return (
     <InputGroup>
-      <FormControl
+      <InputGroup.Checkbox aria-label="Checkbox for following text input" checked={completed} onChange={() => props.handleCompletedToggleFunc(id)} />
+      <FormControl readOnly={true}
         value={title}
       />
       <Button

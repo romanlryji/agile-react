@@ -19,6 +19,20 @@ const TodoContainer = () => {
 
   // let todos = [todo1, todo2]
 
+  const handleCompletedToggle = id => {
+    setTodos(prevState =>
+      prevState.map(todo => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          }
+        }
+        return todo
+      })
+    )
+  }
+
   const addTodoItem = title => {
     const newTodo = {
       id: uuidv4(),
@@ -52,7 +66,9 @@ const TodoContainer = () => {
       <InputTodo addTodoFunc={addTodoItem} />
       <TodoItems
         todos={todos}
-        deleteTodoFunc={delTodoItem} />
+        deleteTodoFunc={delTodoItem}
+        handleCompletedToggleFunc={handleCompletedToggle}
+      />
     </div>
   )
 }

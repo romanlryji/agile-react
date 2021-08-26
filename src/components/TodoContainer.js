@@ -28,6 +28,14 @@ const TodoContainer = () => {
     setTodos([...todos, newTodo])
   }
 
+  const delTodoItem = id => {
+    setTodos([
+      ...todos.filter(todo => {
+        return todo.id !== id
+      })
+    ])
+  }
+
   function getInitialTodos() {
     const temp = localStorage.getItem("todos")
     const loadedTodos = JSON.parse(temp)
@@ -41,8 +49,10 @@ const TodoContainer = () => {
 
   return (
     <div>
-      <InputTodo addTodoFunc = {addTodoItem} />
-      <TodoItems todos={todos} />
+      <InputTodo addTodoFunc={addTodoItem} />
+      <TodoItems
+        todos={todos}
+        deleteTodoFunc={delTodoItem} />
     </div>
   )
 }

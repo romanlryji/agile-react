@@ -15,7 +15,7 @@ const TodoItems = props => {
             key={todo.id}
             todo={todo}
             handleChangeProps={props.handleChangeProps}
-            deleteTodoProps={props.deleteTodoProps}
+            deleteTodoFunc={props.deleteTodoFunc}
             setUpdate={props.setUpdate}
           /></ListGroup.Item>
         ))

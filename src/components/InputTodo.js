@@ -41,7 +41,7 @@ const InputTodo = props => {
   }
 
   return (
-    <InputGroup className="mb-3">
+    <InputGroup className="mb-3 mt-2">
       <FormControl
         value={inputText.title}
         onChange={onChange}

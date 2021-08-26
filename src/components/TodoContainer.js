@@ -84,7 +84,7 @@ const TodoContainer = () => {
     <div>
       <InputTodo addTodoFunc={addTodoItem} />
       <TodoItems
-        todos={todos}
+        todos={todos.sort((a, b) => a.created < b.created)}
         deleteTodoFunc={delTodoItem}
         handleCompletedToggleFunc={handleCompletedToggle}
         setNewTitleFunc={setNewTitle}
